@@ -8,14 +8,14 @@ const app = express()
 const port = process.env.PORT || 9000
 
 const pusher = new Pusher({
-    appId: "1328396",
-    key: "0bec0cb5d11093c5fe94",
-    secret: "656a5a8bc69aaca527b3",
-    cluster: "mt1",
+    appId: process.env.appId,
+    key: process.env.key,
+    secret: process.env.secretKey,
+    cluster: process.env.cluster,
     useTLS: true
 });
 
-const connection_url = 'mongodb+srv://admin:M074P9Hp6jZBAL3e@cluster0.z8mso.mongodb.net/whatsappdb?retryWrites=true&w=majority'
+const connection_url = 'process.env.mongoURL'
 
 Mongoose.connect(connection_url)
 
